@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CLOCK</title>
+</head>
+<body>
+<div class="body-center">
+<div class="main-body">
+	<div class="time">
+		<span id='hour'></span> 
+		<span id='minute'></span>
+		 <span id='second'></span>
+		 <span id='ampm'></span>
+	</div><hr>
+	<div class="date-day">
+		<span id="day">day</span>
+		<span id="date"></span>
+	</div>
+
+</div>
+</div>
+<script type="text/javascript">
+        var myDate = new Date();
+        var myDay = myDate.getDay();
+        
+        // Array of days.
+        var weekday = ['Sunday', 'Monday', 'Tuesday',
+            'Wednesday', 'Thursday', 'Friday', 'Saturday'
+        ];
+        document.write("<br/>");
+
+
+        // get hour value.
+        var hours = myDate.getHours();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;                                                                            
+        hours = hours ? hours : 12;
+        var minutes = myDate.getMinutes();
+        
+        var seconds = myDate.getSeconds()                                                
+function clock(){ 
+	seconds = parseInt(seconds); 
+	minutes = parseInt(minutes);
+	hours = parseInt(hours);    
+	seconds = seconds + 1;
+	if(seconds == 60){
+		minutes = minutes + 1;
+		seconds = 0;
+	}
+	if(minutes == 60){
+		hours = hours + 1;
+		minutes = 0;
+	}
+	hours = hours < 10 ? '0' + hours : hours;
+	document.getElementById('hour').innerHTML=hours;
+	minutes = minutes < 10 ? '0' + minutes : minutes;
+	document.getElementById('minute').innerHTML=minutes;
+	seconds = seconds < 10 ? '0' + seconds : seconds;
+	document.getElementById('second').innerHTML=seconds;
+	document.getElementById('ampm').innerHTML=ampm;         
+}        
+setInterval(clock, 1000);
+
+		// Today's day ---------------------------------------day
+		switch (new Date().getDay()) {
+  		case 0:
+    		day = "Sunday";
+    		break;
+  		case 1:
+    		day = "Monday";
+    		break;
+  		case 2:
+     		day = "Tuesday";
+    		break;
+  		case 3:
+    		day = "Wednesday";
+    		break;
+  		case 4:
+    		day = "Thursday";
+    		break;
+  		case 5:
+    		day = "Friday";
+    		break;
+  		case 6:
+    		day = "Saturday";
+		}
+		document.getElementById('day').textContent = day;
+
+		// Today's date --------------------------------------date
+		var d = new Date();
+		var date = d.toLocaleString('en-US', {
+    day: 'numeric', // numeric, 2-digit
+    year: 'numeric', // numeric, 2-digit
+    month: 'long', // numeric, 2-digit, long, short, narrow
+});
+		document.getElementById('date').innerHTML = date;
+
+</script>
+<style>
+	
+
+
+body{
+	background-image: linear-gradient(to left,#dbe2f5,#c1def0,#b4e8f6,#c1def0,#dbe2f5);
+	height: 100%;
+	background-blend-mode: screen;
+	background-position: center;
+    background-origin: padding-box, padding-box;
+}
+.body-center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 4.5cm;
+
+}
+.main-body{
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	border:  5px solid #5680E9;
+	border-radius: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0px;
+}
+hr{
+	width: 11cm;
+	height: 4px;
+	background-color:#5680E9;
+	border-radius: 20px;
+}
+.time{
+	display: flex;
+	justify-content: center;
+}
+#hour{
+	height: 3cm;
+	width: 3cm;
+	background-image: linear-gradient(to left,#5680E9,#5AB9EA);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+	border-radius: 15px;
+	font-size: 30px;
+}
+#minute{
+	height: 3cm;
+	width: 3cm;
+	background-image: linear-gradient(to left,#5680E9,#5AB9EA);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+	border-radius: 15px;
+	font-size: 30px;
+}
+#second{
+	height: 3cm;
+	width: 3cm;
+	background-image: linear-gradient(to left,#5680E9,#5AB9EA);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+	border-radius: 15px;
+	font-size: 30px;
+}
+#ampm{
+	height: 1.5cm;
+	width: 1.5cm;
+	position: relative;
+	top: 1.5cm;
+	background-image: linear-gradient(to left,#5680E9,#5AB9EA);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+}
+.date-day{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#date{
+	height: 3cm;
+	width: 6.5cm;
+	background-image: linear-gradient(to left,#5680E9,#5AB9EA);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+	border-radius: 15px;
+}
+#day{
+	height: 3cm;
+	width: 4.5cm;
+	background-image: linear-gradient(to left,#5680E9,#5AB9EA);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 20px;
+	position: relative;
+	left: 10px;
+	border-radius: 15px;
+}
+
+@media only screen and (max-device-width: 425px){
+	.body-center{
+		display: flex; 
+	      	width: 100%;
+	      	height: 100%;
+	}
+	.main-body{
+		width: 80%;
+	}
+	.time{
+		width: 100%;
+	}
+	#hour{
+		width: 25%;
+	}
+	#minute{
+		width: 25%;
+	}
+	#second{
+		width: 25%;
+	}
+	#ampm{
+		width: 10%; 
+	}
+	#date{
+		width: 43%; 
+	}
+	#day{
+		width: 43%;  
+	}
+	hr{
+		width: 90%;
+	}
+}
+
+
+
+
+
+</style>
+
+</body>
+</html>

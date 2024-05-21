@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+       .main {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        #stopwatch {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="stopwatch">00 : 00 : 00</div>
+        <button id="start" onclick="start()">START</button>
+        <button id="stop" onclick="stop()">STOP</button>
+        <button id="reset" onclick="reset()">RESET</button>
+    </div>
+
+    <script type="text/javascript">
+        const timer = document.getElementById('stopwatch');
+    
+        let hr = 0;
+        let min = 0;
+        let sec = 0;
+        let stoptime = true;
+        let timerInterval; // Define the interval variable
+    
+        function start() {
+            if (stoptime == true) {
+                stoptime = false;
+                timerInterval = setInterval(timerCycle, 1000); // Start the interval
+            }
+            document.getElementById("start").textContent = "START";
+        }
+    
+        function stop() {
+            if (stoptime == false) {
+                stoptime = true;
+            }
+            document.getElementById("start").textContent = "RESUME";  
+        }
+    
+        function timerCycle() {
+            if (stoptime == false) {
+                sec++;
+                if (sec == 60) {
+                    min++;
+                    sec = 0;
+                }
+                if (min == 60) {
+                    hr++;
+                    min = 0;
+                    sec = 0;
+                }
+    
+                updateDisplay();
+            }
+        }
+    
+        function updateDisplay() {
+            let hours = String(hr).padStart(2, '0');
+            let minutes = String(min).padStart(2, '0');
+            let seconds = String(sec).padStart(2, '0');
+            timer.textContent = `${hours} : ${minutes} : ${seconds}`;
+        }
+    
+        function reset() {
+            clearInterval(timerInterval); // Clear the interval
+            hr = 0;
+            min = 0;
+            sec = 0;
+            updateDisplay(); // Update the display after resetting
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.line1{
+    display: flex;
+    justify-content: center; 
+}
+#name1, #alpha1, #beta1, #charlie1, #delta1{
+    height: 1cm;
+    width: 10%;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: transform 2s;
+    cursor: pointer;
+    font-weight: bold;
+}
+#name1::after, #alpha1::after, #beta1::after, #charlie1::after, #delta1::after{
+    content: '';
+    border: 1px solid red;
+    background: red;
+    height: 2px;
+    width: 0.1%;
+    margin-top: 10%;
+    display: block;
+    transition: width 1s, visibility 0.9s;
+    visibility: collapse;
+
+}
+#name1:hover::after, #alpha1:hover::after, #beta1:hover::after, #charlie1:hover::after, #delta1:hover::after{
+    width: 100%;
+    border: 1px solid red;
+    background: red;
+    visibility: visible;
+}
+#name1:active, #alpha1:active, #beta1:active, #charlie1:active, #delta1:active{
+    color: rgba(255, 0, 0, 0.466);
+}
+#name1{
+    margin-right: auto ;
+}
+@media screen and (min-width: 701px) {
+    #name1, #alpha1, #beta1, #charlie1, #delta1{
+      font-size: 18px;
+    }
+  }
+  
+
+@media screen and (max-width: 600px & min-width: 400px) {
+    #name1, #alpha1, #beta1, #charlie1, #delta1{
+      font-size: 15px;
+    }
+}
+@media screen and (max-width: 500px) {
+    #name1, #alpha1, #beta1, #charlie1, #delta1{
+      font-size: 12px;
+    }
+}
+@media screen and (max-width: 450px) {
+    #name1, #alpha1, #beta1, #charlie1, #delta1{
+      font-size: 10px;
+      margin-left: 10px;
+    }
+}
+hr{
+    height: 0.1px;
+    font-weight: lighter;
+    background-color: white;
+}
+////////////////////////////////////////////////////

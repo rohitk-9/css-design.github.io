@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Weather</title>
+	<link rel="stylesheet" href="weathercss.css">
+</head>
+<body>
+	<div class="freespace1" onclick="hideloc()"></div><br>
+	<div class="pages">
+		<div class="first-page">
+			<div class="row">
+				<div class="row-text">
+					<span id="day"></span><br><br>
+					<span id="date"></span><br><br>
+					<div class="weatherWidget" onclick="#"></div><br>
+					<button id="btn" onclick="chngloc()">Change Location</button>
+					<input type="text" id="newloc" autofocus>
+					<button id="submit" onclick="newloc()">→</button>
+					
+				</div>
+			</div>
+		</div>
+
+	</div>
+		
+
+	<!-- JAVASCRIPT -->
+	<script type="text/javascript">
+		function hideloc(){
+		document.getElementById("newloc").style.display = 'none';
+		document.getElementById("submit").style.display = 'none';
+	}
+		function chngloc(){
+			document.getElementById("newloc").style.display = 'unset';
+			document.getElementById("submit").style.display = 'unset';
+		}
+		
+		// Today's day ---------------------------------------day
+		switch (new Date().getDay()) {
+  		case 0:
+    		day = "Sunday";
+    		break;
+  		case 1:
+    		day = "Monday";
+    		break;
+  		case 2:
+     		day = "Tuesday";
+    		break;
+  		case 3:
+    		day = "Wednesday";
+    		break;
+  		case 4:
+    		day = "Thursday";
+    		break;
+  		case 5:
+    		day = "Friday";
+    		break;
+  		case 6:
+    		day = "Saturday";
+		}
+		document.getElementById('day').innerHTML = day;
+
+		// Today's date --------------------------------------date
+		var d = new Date();
+		var date = d.toLocaleString('en-US', {
+    day: 'numeric', // numeric, 2-digit
+    year: 'numeric', // numeric, 2-digit
+    month: 'long', // numeric, 2-digit, long, short, narrow
+});
+		document.getElementById('date').innerHTML = date;
+
+
+	
+	xyz("India");
+   function xyz(loc){
+   	window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   	window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"Q5PU8EYAFUPS794E82VET4ZUS", //Sign up for your personal key
+       location:loc, //Enter an address
+       unitGroup:"metric", //"us" or "metric"
+       forecastDays:8, //how many days forecast to show
+       title:"", //optional title to show in the 
+       showTitle:true, 
+       showConditions:true
+   });
+
+
+   (function() {
+   var d = document, s = d.createElement('script');
+   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
+
+
+   }
+
+   function newloc(){
+			var loc = document.getElementById("newloc").value;
+			xyz(loc);
+			
+
+		}
+
+	
+		
+</script>
+
+
+
+
+</body>
+</html>

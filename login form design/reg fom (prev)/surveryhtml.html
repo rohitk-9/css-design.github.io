@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="surveycss.css"> 
+</head>
+<body>
+	<div class="main-body">
+		<h1 align="center" style="font-family: 'Candara';">REGISTRATION FORM</h1>
+		<h6 align="center" id="note1">NOTE : Details with <a style="color: red;">*</a> sign are mandatory.</h6>
+
+		<div class="details" align="center"> 
+			<div class="white-background"></div>
+			<div class="details-text">
+				NAME<a style="color: red;">*</a><br><br>
+				FATHER'S NAME<a style="color: red;">*</a><br><br>
+				MOTHER'S NAME<a style="color: red;">*</a><br><br>
+				AGE<a style="color: red;">*</a><br><br>
+				MOBILE NO.<a style="color: red;">*</a><br><br>
+				ALTERNATE MOBILE NO. <br><br>
+				RESIDENTIAL ADDRESS<a style="color: red;">*</a><br><br><br>
+			PERMANENT ADDRESS<a style="color: red;">*</a><br><br>
+			</div>
+			<form>
+			<div class="details-box">
+				<input type="text" id="db1" required><br>
+			 	<input type="text" id="db2" required><br>
+			 	<input type="text" id="db3" required><br>
+			 	<input type="number" min="10" max="122" id="db4" required><br>
+				<input type="number" id="db5" required><br>
+				<input type="number" id="db6"><br>
+			 	<input type="text" id="db7"  required><br><br>
+			 	<input type="text" id="db8" required>
+			</div>
+			<p id="check1"><input type="checkbox" id="check2" onclick="sameaddress()">Residential address is permanent address</p>
+			<p id="check-declare1"> <input type="checkbox" id="check-declare" required="required" onclick="declaresubmit()"><a id="check-declare2">I declare that all details given by me are correct.</a></p>
+			<input type="submit" id="submitbtn">
+			</form>
+		</div>
+	</div>
+
+	<!-- SECTION FOR JAVASCRIPT -->
+	<script type="text/javascript">
+		
+		function sameaddress(){				            //For same address
+			var x = document.getElementById("db7").value;
+			document.getElementById("db8").value = x;
+		}
+
+
+		function declaresubmit(){
+			document.getElementById("submitbtn").style.color = "grey";
+		}
+
+	</script>
+
+</body>
+</html>

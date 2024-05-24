@@ -1,0 +1,142 @@
+body{
+	background-color: #53b1bd5e;
+}
+.main-body{
+	width: 1142px;
+}
+.white-background{
+	border: 0px solid black;
+	position: relative;
+	left: 2%;
+	bottom: 0.6cm;
+	width: 70%;
+	height: 11.8cm;
+	background-color: white;
+	opacity: 0.5;
+	border-radius: 10px;
+}
+.details{
+	height: 300px;
+}
+form{
+	height: 50px;
+}
+#note1{
+	position: relative;
+	bottom: 25px;
+	font-family: serif;
+	font-size: 13px;
+}
+h4{
+	color: red;
+}
+.details-text{
+	text-align: right;
+    padding-right: 18cm;
+    position: relative;
+    bottom: 11.6cm;
+    color: grey;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+.details-box{
+	position: relative;
+	bottom: 8.25cm;
+	left: 3cm;
+	height: 0px;
+}
+#db1{
+	position: relative;
+	bottom: 0.6cm;
+}
+#db2{
+	position: relative;
+	bottom: 0.25cm;
+}
+#db3{
+	position: relative;
+	top: 0.1cm;
+}
+#db4{
+	position: relative;
+	top: 0.4cm;
+}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+	-webkit-appearance: none;
+}
+#db5{
+	position: relative;
+	top: 0.8cm;
+}
+#db6{
+	position: relative;
+	top: 1.1cm;
+}
+#db7{
+	position: relative;
+	top: 1.38cm;
+}
+#db8{
+	position: relative;
+	top: 1.75cm;
+}
+#check1{
+	position: relative;
+	bottom: 3.1cm;
+	left: 3cm;
+	width: 350px;
+}
+#check2{
+	position: relative;
+	top: 4px;
+	width: 10px;
+}
+input{
+	width: 7cm;
+	height: 19px;
+	border: 1px solid #53b1bd5e;
+	border-radius: 6px;
+	text-align: center;
+	font-family: sans-serif;
+	color: black;
+}
+input[type=submit]{
+	position: relative;
+	bottom: 2cm;
+	height: 0.8cm;
+	font-family: "Segoe UI";
+	font-weight: bolder;
+	font-size: 17px;
+	color: #e7c9c9;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+#check-declare{
+	width: 15px;
+}
+#check-declare1{
+	position: relative;
+	bottom: 2cm;
+}
+#check-declare2{
+	position: relative;
+	bottom: 3px;
+	left: 10px;
+}
+input:focus{
+	outline: none;
+	border-color: skyblue;
+}
+input[type=submit]:focus{
+	background-image: linear-gradient(#53b1bd5e, skyblue);
+	color: black;
+	text-shadow: 0 0 3px grey;
+
+}
+input[type=submit]:hover{
+	border-color: skyblue;
+}
+form{
+	position: relative;
+	bottom: 10.899cm;
+}

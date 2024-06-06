@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="indexcss.css">
+</head>
+<body>
+    <header>
+      <h1>Frontendo</h1>
+      <!-- <span id="label_section">Label</span> -->
+    </header>
+    <h1 id="site_name">Frontendo</h1>
+    <div class="container">
+      <div class="product_grid">
+          <div class="card stacked featured" onmousemove="zoomIn(event)" onmouseout="zoomOut()">
+                <div class="labels">
+                    <a href="#">label1</a>
+                    <a href="##">label2</a>
+                    <a href="###">label3</a>
+                </div>  
+              <img src="img/weather.png" alt="firefox" onclick="window.location.href = 'blogs/weather/weather.html'">   
+              <div class="card_content" onclick="window.location.href = 'blogs/weather/weather.html'" >
+                  <h2 class="card_title">Weather widget</h2>
+              </div>
+          </div>
+
+          <div class="card stacked" onmousemove="zoomIn(event)" onmouseout="zoomOut()">
+            <div class="labels">
+                <a href="#">label1</a>
+                <a href="##">label2</a>
+                <a href="###">label3</a>
+            </div>
+            <img src="img/clock.png" alt="clock using html css and js" onclick="window.location.href = 'projects/jsclock/clock.html'">   
+            <div class="card_content" onclick="window.location.href = 'projects/jsclock/clock.html'" >
+              <h2 class="card_title">JS Clock</h2>
+            </div>
+          </div>
+
+          <div class="card stacked" onmousemove="zoomIn(event)" onmouseout="zoomOut()">
+            <div class="labels">
+                <a href="#">label1</a>
+                <a href="##">label2</a>
+                <a href="###">label3</a>
+            </div>
+              <img src="img/log.png" alt="firefox" onclick="window.location.href = 'blogs/login/login.html'">
+              <div class="card_content" onclick="window.location.href = 'blogs/login/login.html'">
+                  <h2 class="card_title">Login / Signup page</h2> 
+              </div>
+          </div>
+
+          <div class="card stacked" onmousemove="zoomIn(event)" onmouseout="zoomOut()">
+            <div class="labels">
+                <a href="#">label1</a>
+                <a href="##">label2</a>
+                <a href="###">label3</a>
+            </div>
+              <img src="img/glow.png" alt="firefox" onclick="window.location.href = 'https://coderati.blogspot.com/2022/08/lets-glow-description-this-design-was.html'">
+              <div class="card_content" onclick="window.location.href = 'https://coderati.blogspot.com/2022/08/lets-glow-description-this-design-was.html'">
+                  <h2 class="card_title">Glowing effect on button</h2> 
+              </div>
+          </div>
+
+          <div class="card stacked" onmousemove="zoomIn(event)" onmouseout="zoomOut()">
+            <div class="labels">
+                <a href="#">label1</a>
+                <a href="##">label2</a>
+                <a href="###">label3</a>
+            </div>
+              <img src="img/a.png" alt="firefox" onclick="window.location.href = 'blogs/test.html'">
+              <div class="card_content" onclick="window.location.href = 'blogs/test.html'">
+                  <h2 class="card_title">Demo 1</h2>
+              </div>
+          </div>
+
+          <div class="card stacked" onmousemove="zoomIn(event)" onmouseout="zoomOut()">
+            <div class="labels">
+                <a href="#">label1</a>
+                <a href="##">label2</a>
+                <a href="###">label3</a>
+            </div>
+              <img src="img/b.png" alt="firefox" onclick="window.location.href = 'blogs/test.html'">
+              <div class="card_content" onclick="window.location.href = 'blogs/test.html'">
+                  <h2 class="card_title">Demo 2</h2>
+              </div>
+          </div>
+      </div>
+    </div>
+ 
+
+
+<script>
+  var prevScrollPos = window.pageYOffset;
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset; 
+    if (prevScrollPos > currentScrollPos ) {
+        document.querySelector("header").style.top = "0%"; 
+    } else {
+      document.querySelector("header").style.top = "-105px";
+    }
+    prevScrollPos = currentScrollPos;
+  }
+
+
+  function zoomIn(event) { 
+         var imageContainer = event.currentTarget;
+         var image = imageContainer.querySelector('img');
+         var scale = 1.1; 
+         image.style.transform = 'scale(' + scale + ')'; 
+      }
+
+      function zoomOut() { 
+  var card = event.currentTarget;
+  var image = card.querySelector('img');
+  image.style.transform = 'none';
+}
+</script>
+ 
+</body>
+</html> 
+
+

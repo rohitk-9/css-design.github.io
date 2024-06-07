@@ -133,7 +133,7 @@ h1{
     
 }     
 .card.stacked:nth-of-type(2) { 
-    background: url(img/card-bg/polygon.png); 
+    background: linear-gradient(to left,#dbe2f5,#c1def0,#b4e8f6,#c1def0,#dbe2f5);; 
     background-repeat: no-repeat;
     background-size: 110%;
 }
@@ -144,6 +144,11 @@ h1{
 }
 .card.stacked:nth-of-type(5) { 
     background: url(img/card-bg/polygrid.png);  
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.card.stacked:nth-of-type(6) { 
+    background: #0b2b44;  
     background-repeat: no-repeat;
     background-size: 100%;
 }

@@ -132,26 +132,26 @@ h1{
     background-size: 100%;
     
 }     
-.card.stacked:nth-of-type(2) { 
+.card.stacked:nth-of-type(3) { 
     background: linear-gradient(to left,#dbe2f5,#c1def0,#b4e8f6,#c1def0,#dbe2f5);; 
     background-repeat: no-repeat;
     background-size: 110%;
 }
-.card.stacked:nth-of-type(3) { 
+.card.stacked:nth-of-type(4) { 
     background: url(img/card-bg/blob.png);  
     background-repeat: no-repeat;
     background-size: 110%;
 }
-.card.stacked:nth-of-type(5) { 
+.card.stacked:nth-of-type(6) { 
     background: url(img/card-bg/polygrid.png);  
     background-repeat: no-repeat;
     background-size: 100%;
 }
-.card.stacked:nth-of-type(6) { 
+/* .card.stacked:nth-of-type() { 
     background: #0b2b44;  
     background-repeat: no-repeat;
     background-size: 100%;
-}
+} */
 .labels a{ 
     border: 0.5px solid white; 
     background-color: var(--background); 

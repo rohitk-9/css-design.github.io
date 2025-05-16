@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body> 
+  <div class="animate"></div>
+    <div class="grid-container">
+        
+    </div>
+    <script>
+        let gridContainer = document.querySelector('.grid-container');
+        for(let i = 0; i < 124; i++) {
+            let gridItem = document.createElement('div');
+            gridItem.className = 'grid-item';
+            gridContainer.appendChild(gridItem);
+        }
+    </script>
+    
+ 
+<style>
+  body{
+    background-color: black;
+    overflow: hidden;
+  }
+.animate{
+  background-color: #54b362;
+  width: 100vw;
+  height: 1.5cm;
+  position: relative;
+  top: -2cm;
+  right: 10px;
+  animation: anim ease-out 2.5s infinite;
+  filter: blur(50px);
+}
+@keyframes anim {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(100vh);
+  }
+}
+  .grid-container {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  height: 100vh;
+  grid-gap: 2px;
+  position: relative;
+  bottom: 1.5cm;
+}
+.grid-item {
+  background: #111111;
+  border: 1px solid rgb(26, 25, 25);
+    height: auto;
+    transition: 1.5s; 
+}
+
+.grid-item:hover {
+  background: #54b362;
+  transition: 0s; 
+}
+.grid-item:active {
+  background: #54b362;
+  transition: 0s; 
+}
+</style>
+</body>
+</html>
